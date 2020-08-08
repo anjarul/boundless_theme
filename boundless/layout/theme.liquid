@@ -199,16 +199,19 @@
 
                                     <div class="grid__item">
                                         <div class="ajaxcart__qty">
-                                            <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--minus chart_quantity_border"
+                                            <button type="button"
+                                                    class="ajaxcart__qty-adjust ajaxcart__qty--minus chart_quantity_border"
                                                     data-id="{{key}}" data-qty="{{itemMinus}}" data-line="{{line}}"
                                                     aria-label="{% endraw %}{{ 'cart.label.reduce_quantity' | t }}{% raw %}">
                                                 <span class="icon icon-minus" aria-hidden="true"></span>
                                                 <span class="icon__fallback-text" aria-hidden="true">&minus;</span>
                                             </button>
-                                            <input type="text" name="updates[]" class="ajaxcart__qty-num chart_quantity_border"
+                                            <input type="text" name="updates[]"
+                                                   class="ajaxcart__qty-num chart_quantity_border"
                                                    value="{{itemQty}}" min="0" data-id="{{key}}" data-line="{{line}}"
                                                    aria-label="quantity" pattern="[0-9]*">
-                                            <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--plus chart_quantity_border"
+                                            <button type="button"
+                                                    class="ajaxcart__qty-adjust ajaxcart__qty--plus chart_quantity_border"
                                                     data-id="{{key}}" data-line="{{line}}" data-qty="{{itemAdd}}"
                                                     aria-label="{% endraw %}{{ 'cart.label.increase_quantity' | t }}{% raw %}">
                                                 <span class="icon icon-plus" aria-hidden="true"></span>
@@ -269,27 +272,18 @@
                             <span class="ajaxcart__subtotal-title h3">{% endraw %}{{ 'cart.general.subtotal' | t }}{% raw %}</span>
                         </div>
                         <div class="grid__item one-third text-right">
-                            <span>{{{totalPrice}}}</span>
+                            <span class="total_price">{{{totalPrice}}}</span>
                         </div>
                     </div>
                 </div>
 
+
                 <p class="text-center ajaxcart__policies txt--minor rte">{% endraw %}
-                    {%- capture taxes_shipping_checkout -%}
-                        {%- if shop.taxes_included and shop.shipping_policy.body != blank -%}
-                            {{ 'cart.general.taxes_included_and_shipping_policy_html' | t: link: shop.shipping_policy.url }}
-                            {%- elsif shop.taxes_included -%}
-                            {{ 'cart.general.taxes_included_but_shipping_at_checkout' | t }}
-                            {%- elsif shop.shipping_policy.body != blank -%}
-                            {{ 'cart.general.taxes_and_shipping_policy_at_checkout_html' | t: link: shop.shipping_policy.url }}
-                        {%- else -%}
-                            {{ 'cart.general.taxes_and_shipping_at_checkout' | t }}
-                        {%- endif -%}
-                    {%- endcapture -%}
-                    {{ taxes_shipping_checkout }}
+
                     {% raw %}</p>
+
                 <button type="submit" class="btn btn--full cart__checkout" name="checkout">
-                    {% endraw %}{{ 'cart.general.checkout' | t }}{% raw %}
+                    {% endraw %} <span class="cart_buy_now">BUY NOW</span>{% raw %}
                 </button>
             </div>
         </form>
