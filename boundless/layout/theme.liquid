@@ -66,15 +66,28 @@
         $(function () {
             $('.clearCart').on('click', function (e) {
 
-                e.preventDefault();
+                // e.preventDefault();
+
                 $.ajax({
                     type: "POST",
                     url: '/cart/clear.js',
-                    success: function () {
-                        alert('Your cart is empty now.');
-                    },
+                    // success: function () {
+                    //     alert('Your cart is empty now.');
+                    // },
                     dataType: 'json'
                 });
+            })
+        });
+    </script>
+
+    <script>
+        $(function () {
+            $('.remove_product').on('click', function (e) {
+                alert("got it")
+
+                var cartContents = fetch('/cart.js')
+                    .then(response => response.json())
+                    .then(data => { return data });
             })
         });
     </script>
@@ -117,7 +130,7 @@
 <div id="CartDrawer" class="drawer drawer--right drawer--has-fixed-footer">
     <div class="drawer__header">
         <div class="drawer__title">
-            <span>Shopping Cart ({{ cart.item_count }})</span>
+            <span>Shopping Cart</span>
             <br>
 
             <div class="clearCart js-drawer-close"><a href="">Remove All From Cart</a></div>
@@ -263,13 +276,10 @@
                                 </div>
                                 {{/if}}
                             </div>
-                            <div class="grid__item one-quarter">
-                                <div class="drawer__close">
-                                    <button type="button">
-                                        <span class="icon icon-x" aria-hidden="true"></span>
-                                    </button>
-                                </div>
-                            </div>
+
+                            <button type="button" class="remove_product one-quarter">
+                                X
+                            </button>
 
                         </div>
                     </div>
