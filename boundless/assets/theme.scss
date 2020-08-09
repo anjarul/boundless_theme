@@ -1523,6 +1523,10 @@ th, td {
     }
   }
 }
+.remove_item_cart_drawer {
+  border: none;
+  background-color: white;
+}
 
 .order-table__product {
   @include media-query($small) {
