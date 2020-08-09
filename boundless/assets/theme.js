@@ -1849,6 +1849,33 @@ var ajaxCart = (function(module, $) {
       }
     });
 
+    // Remove Item
+    $cartContainer.on('click', '.remove_from_drawer', function() {
+      if (isUpdating) return;
+
+
+      var $el = $(this),
+          line = $el.data('line'),
+          $qtySelector = $el.siblings('.ajaxcart__qty-num');
+
+      // var qty = validateQty(qty);
+
+      // Add or subtract from the current quantity
+      if($el.hasClass('ajaxcart__qty--removeall')){
+        updateQuantity(line, 0);
+      }
+
+      // If it has a data-line, update the cart.
+      // Otherwise, just update the input's number
+      // if (line) {
+      //   updateQuantity(line, qty);
+      // } else {
+      //   $qtySelector.val(qty);
+      // }
+    });
+
+
+
     // Update quantity based on input on change
     $cartContainer.on('change', '.ajaxcart__qty-num', function() {
       if (isUpdating) return;

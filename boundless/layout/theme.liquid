@@ -244,6 +244,7 @@
                                                 <span class="icon icon-plus" aria-hidden="true"></span>
                                                 <span class="icon__fallback-text" aria-hidden="true">+</span>
                                             </button>
+
                                         </div>
                                     </div>
 
@@ -265,7 +266,9 @@
                                 {{/if}}
                             </div>
 
-                            <button type="button" class="remove_item_cart_drawer one-quarter">
+                            <button type="button"
+                                    class="remove_item_cart_drawer one-quarter remove_from_drawer ajaxcart__qty--removeall"
+                                    data-id="{{key}}" data-qty="{{itemMinus}}" data-line="{{line}}">
                                 X
                             </button>
 
