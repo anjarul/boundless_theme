@@ -80,18 +80,6 @@
         });
     </script>
 
-    <script>
-        $(function () {
-            $('.remove_product').on('click', function (e) {
-                alert("got it")
-
-                var cartContents = fetch('/cart.js')
-                    .then(response => response.json())
-                    .then(data => { return data });
-            })
-        });
-    </script>
-
     {{ content_for_header }}
 
 </head>
