@@ -2779,11 +2779,11 @@ theme.stringOverrides = function () {
 };
 
 theme.initCart = function() {
-
+  
     ajaxCart.init({
       moneyFormat: theme.settings.moneyFormat
     });
-
+  
 
   if (!theme.cookiesEnabled()) {
     theme.cache.$cartContainer.addClass(theme.cache.cartNoCookies);
@@ -2832,9 +2832,9 @@ theme.searchSubmit = function () {
 
 theme.socialSharing = function () {
   // Stop initializing if settings are disabled
-
+  
     return;
-
+  
 
   // General selectors
   var $buttons = theme.cache.$shareButtons;
