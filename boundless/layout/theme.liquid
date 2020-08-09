@@ -71,9 +71,9 @@
                 $.ajax({
                     type: "POST",
                     url: '/cart/clear.js',
-                    // success: function () {
-                    //     alert('Your cart is empty now.');
-                    // },
+                    success: function () {
+                        location.reload();
+                    },
                     dataType: 'json'
                 });
             })
@@ -121,7 +121,9 @@
             <span>Shopping Cart</span>
             <br>
 
-            <div class="clearCart js-drawer-close" style="margin-top: .5rem"><a href="">Remove All From Cart</a></div>
+            <button type="submit" class="clearCart js-drawer-close cart__remove_all_item">
+                <span>Clear Cart</span>
+            </button>
 
         </div>
 

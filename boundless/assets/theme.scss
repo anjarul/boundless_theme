@@ -4609,7 +4609,7 @@ $slick-opacity-not-active: 0.25;
   position: absolute;
   top: 0;
   display: table;
-  height: $drawer-header-height;
+  height: 100px;
   width: 100%;
   padding: 0 ($gutter-site / 2);
   border-bottom: 1px solid #E8E8E8;
@@ -4617,7 +4617,7 @@ $slick-opacity-not-active: 0.25;
 
 .drawer__inner {
   position: absolute;
-  top: $drawer-header-height;
+  top: 100px;
   margin-top: 5px;
   bottom: 0;
   left: 0;
@@ -5023,6 +5023,18 @@ $slick-opacity-not-active: 0.25;
 .cart__checkout {
   background-color: #D83C39;
   border-radius: 2px;
+}
+
+.cart__remove_all_item {
+  background-color: #D83C39;
+  border-radius: 2px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  margin: .5rem auto;
+  &:hover{
+    background-color: black;
+  }
 }
 .total_price {
   font-family: Archivo Narrow;
